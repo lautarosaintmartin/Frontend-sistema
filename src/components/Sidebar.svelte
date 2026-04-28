@@ -7,10 +7,8 @@
 
 </script>
 
-<aside>
-    {#each ROUTES as route}
-
-    <p class="text-white text-2xl">{route.name}</p>
-
+<aside class = "bg-gray-200 w-40 flex flex-col gap-2 p-2">
+    {#each ROUTES.filter(x => !x.public) as route}
+        <a href = {route.path} class="text-black text-xl p-1 bg-gray-500 rounded-md text-center">{route.name} </a>
     {/each}
 </aside>
