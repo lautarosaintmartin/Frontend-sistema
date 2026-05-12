@@ -1,10 +1,10 @@
 import { setTheme } from "./setup";
 
-class AppStore{
+class AppStore {
     isDarkMode = $state(false);
     isSideBarOpen = $state(true);
 
-    toggleDarkMode(){
+    toggleDarkMode() {
         this.isDarkMode = !this.isDarkMode;
         localStorage.setItem('color-theme', this.isDarkMode ? 'dark' : 'light');
         window.document.documentElement.classList.toggle('dark', this.isDarkMode);
