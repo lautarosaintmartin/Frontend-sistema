@@ -8,6 +8,12 @@
         class="w-full h-full text-black fixed top-0 left-0 flex flex-col items-center bg-transparent justify-center backdrop-blur-xl"
     >
         <form class="w-96 bg-white p-4 rounded-md">
+            <button
+                aria-label="Cerrar"
+                class="close"
+                onclick={() => (editDialog = false)}>X</button
+            >
+
             <h2 class="text-lg font-bold">Editar usuario</h2>
             <hr />
             <div class="p-2 flex flex-col">
