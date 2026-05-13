@@ -1,23 +1,32 @@
 <script lang="ts">
-    let { user, deleteDialog = $bindable() } = $props();
+    let { userModel } = $props();
 </script>
 
-{#if deleteDialog}
+{#if userModel.deleteDialog}
     <dialog
-        open={deleteDialog}
+        open={userModel.deleteDialog}
         class="w-full h-full fixed top-0 lext-0 flex items-center bg-transparent justify-center backdrop-blur-xl"
     >
         <div class="bg-white p-4 rounded-md w-120">
-            <button
-                aria-label="Cerrar"
-                class="close"
-                onclick={() => (deleteDialog = false)}>X</button
-            >
-
             <div class="p-4 flex justify-center">
                 <h2 class="text-lg font-bold">
-                    Desea eliminar el usuario {user.fullname}
+                    Desea eliminar el usuario {userModel.user.username}
                 </h2>
+            </div>
+
+            <div class="p-2 flex justify-end gap-2 mt-3">
+                <button
+                    class="bg-red-400 text-white px-4 py-2 rounded-md"
+                    onclick={() => (userModel.deleteDialog = false)}
+                >
+                    Cancelar
+                </button>
+                <button
+                    class="bg-blue-400 text-white px-4 py-2 rounded-md"
+                    onclick={() => (userModel.deleteDialog = false)}
+                >
+                    Guardar
+                </button>
             </div>
         </div>
     </dialog>
