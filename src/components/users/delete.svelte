@@ -10,7 +10,7 @@
         <div class="bg-white p-4 rounded-md w-120">
             <div class="p-4 flex justify-center">
                 <h2 class="text-lg font-bold">
-                    Desea eliminar el usuario {userModel.user.username}
+                    Desea eliminar el usuario {userModel.user.fullname}
                 </h2>
             </div>
 
