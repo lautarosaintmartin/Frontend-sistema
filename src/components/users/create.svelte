@@ -32,7 +32,7 @@
                 </div>
 
                   <div class="p-2 flex flex-col">
-                    <label for="email">Ingrese la contraseña:</label>
+                    <label for="password">Ingrese la contraseña:</label>
                     <input
                         class="border border-gray-400 rounded-md p-2"
                         type="password"
