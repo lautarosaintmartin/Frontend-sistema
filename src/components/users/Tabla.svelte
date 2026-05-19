@@ -3,6 +3,7 @@
     import Delete from "./delete.svelte";
     import Edit from "./edit.svelte";
     import { userModel } from "./user.svelte";
+    import Create from "./create.svelte";
 
     onMount(async () => {
         await userModel.getUsers()
@@ -11,6 +12,16 @@
 
 <Delete { userModel }/>
 <Edit { userModel }/>
+<Create {userModel} />
+
+<div class = "w-full flex justify-end mb-4">
+    <button 
+        class = "bg-gray-800 text-xl text-white rounded-md px-2 py-1 border border-white"
+        onclick={(e) => userModel.showCreateModal()}
+    >
+        Agregar Usuario
+    </button>
+</div>
 
 <table class="flex-1 w-full bg-slate-400 dark:bg-gray-900 dark:text-white">
     <thead>

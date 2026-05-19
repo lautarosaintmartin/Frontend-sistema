@@ -1,3 +1,5 @@
+import { http } from '@core/http'
+
 interface User
 {
     id: number;
@@ -11,19 +13,16 @@ class UserModel
     users = $state <User[]>([])
     deleteDialog = $state(false)
     editDialog = $state(false)
+    createDialog = $state(false)
 
     async getUsers()
     {
-        const res = await fetch(`${import.meta.env.PUBLIC_API_URL}/users`);
-        const data = await res.json();
-        this.users = data;
+        this.users = await http.get(`${import.meta.env.PUBLIC_API_URL}/users`);
     }
 
     async deleteUser(id: number)
     {
-        await fetch(`${import.meta.env.PUBLIC_API_URL}/users/${id}`, {
-            method: 'DELETE',
-        });
+        await http.delete(`${import.meta.env.PUBLIC_API_URL}/users/${id}`);
         this.getUsers();
         this.deleteDialog = false;
     }
@@ -34,17 +33,23 @@ class UserModel
         const formData = new FormData(e.target as HTMLFormElement)
         const data = Object.fromEntries(formData)
 
-        await fetch(`${import.meta.env.PUBLIC_API_URL}/users/${id}`, {
-            method: 'PATCH',
-            body: JSON.stringify({
-                ...data
-            }),
-            headers: { // le dice al backend que tipo le estoy mandando
-                'Content-type': 'application/json'
-            }
-        });
+        await http.patch(`${import.meta.env.PUBLIC_API_URL}/users/${id}`, data);
         this.getUsers();
         this.editDialog = false;
+    }
+
+    async createUser(e: Event){
+        e.preventDefault()
+        const formData = new FormData(e.target as HTMLFormElement)
+        const data = Object.fromEntries(formData)
+        await http.post<User>(`${import.meta.env.PUBLIC_API_URL}/users`, data)
+        this.getUsers()
+        this.createDialog = false
+    }
+
+    showCreateModal(){
+        this.user = null
+        this.createDialog = true
     }
 
     showEditModal(user:User)

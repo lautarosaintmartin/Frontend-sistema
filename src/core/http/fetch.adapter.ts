@@ -44,7 +44,7 @@ export class FetchAdapter implements HttpAdapter {
     const response = await fetch(url, {
       method,
       headers,
-      credentials: 'include', // 🔥 CLAVE PARA COOKIES
+      // credentials: 'include', // 🔥 CLAVE PARA COOKIES
       body: body ? JSON.stringify(body) : undefined,
     });
 
