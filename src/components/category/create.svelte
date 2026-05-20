@@ -1,6 +1,5 @@
 <script lang="ts">
-    let categoryModel = $props()
-    let id = $props.id();
+    let { categoryModel } = $props()
 </script>
 
 {#if categoryModel.createDialog}
@@ -17,17 +16,32 @@
                         class="border border-gray-400 rounded-md p-2"
                         type="text"
                         name="name"
-                        id={`name-${id}`}
+                        id="name"
                     />
                 </div>
 
                 <div class="p-2 flex flex-col">
-                    <label for="email">Descripción:</label>
+                    <label for="description">Descripción:</label>
                     <input
                         class="border border-gray-400 rounded-md p-2"
                         type="text"
                         name="description"
                     />
+                </div>
+
+                 <div class="p-2 flex justify-end gap-2 mt-3">
+                    <button
+                        class="bg-red-400 text-white px-4 py-2 rounded-md"
+                        onclick={() => (categoryModel.createDialog = false)}
+                    >
+                        Cancelar
+                    </button>
+                    <button 
+                        class="bg-blue-400 text-white px-4 py-2 rounded-md"
+                        type = "submit"
+                    >
+                        Guardar
+                    </button>
                 </div>
             </form>
         </div>

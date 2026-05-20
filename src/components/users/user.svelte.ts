@@ -42,6 +42,7 @@ class UserModel
         e.preventDefault()
         const formData = new FormData(e.target as HTMLFormElement)
         const data = Object.fromEntries(formData)
+        
         await http.post<User>(`${import.meta.env.PUBLIC_API_URL}/users`, data)
         this.getUsers()
         this.createDialog = false

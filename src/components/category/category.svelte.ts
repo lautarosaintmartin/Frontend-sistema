@@ -1,5 +1,4 @@
 import { http } from '@core/http'
-import Category from '../../pages/category.astro'
 
 interface Category {
     id: number
@@ -15,7 +14,7 @@ class CategoryModel{
     editDialog = $state(false)
     createDialog = $state(false) 
 
-    selectedCategory = $state <Category | null>(null)
+   
 
     async getCategory(){
         this.categories = await http.get(`${import.meta.env.PUBLIC_API_URL}/categories`)
@@ -32,11 +31,11 @@ class CategoryModel{
 
     }
 
-    async deleteCategory(){
-        if (!this.selectedCategory) return
-        await http.delete(`${import.meta.env.PUBLIC_API_URL}/category`)
+    async deleteCategory(id: number){
+        if (!this.category) return
+        await http.delete(`${import.meta.env.PUBLIC_API_URL}/category/${id}`)
 
-        this.closeDialogs()
+        this.deleteDialog = false
     }
 
     async editCategory(id: number, e: Event){
@@ -44,32 +43,11 @@ class CategoryModel{
         const formData = new FormData(e.target as HTMLFormElement)
         const data = Object.fromEntries(formData)
 
-        if (!this.selectedCategory) return
+        if (!this.category) return
         await http.patch(`${import.meta.env.PUBLIC_API_URL}/category/${id}`, data)
 
         this.getCategory();
         this.editDialog = false;
-    }
-
-    openCreateDialog(){
-        this.createDialog = true
-    }
-
-    openDeletDialog(category: Category){
-        this.selectedCategory = category
-        this.deleteDialog = true
-    }
-
-    openEditDialog(category: Category){
-        this.selectedCategory = category
-        this.editDialog = false
-    }
-
-    closeDialogs(){
-        this.deleteDialog = false
-        this.editDialog = false
-        this.createDialog = false 
-        this.selectedCategory = null
     }
 
     showCreateModal(){
