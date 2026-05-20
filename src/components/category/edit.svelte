@@ -23,12 +23,12 @@
                 </div>
 
                 <div class="p-2 flex flex-col">
-                    <label for="email">Correo Electronico:</label>
+                    <label for="email">Descripción:</label>
                     <input
                         class="border border-gray-400 rounded-md p-2"
-                        type="email"
-                        name="email"
-                        id={`email-${id}`}
+                        type="text"
+                        name="description"
+                        id= "description"
                         value={categoryModel.category?.description}
                     />
                 </div>

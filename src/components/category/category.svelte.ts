@@ -6,62 +6,68 @@ interface Category {
     description: string
 }
 
-class CategoryModel{
-    
-    category = $state <Category | null>(null) //usamos para guardar lo que selecciona un usuario
-    categories = $state <Category[]>([]) //contiene 
+class CategoryModel {
+
+    category = $state<Category | null>(null) //usamos para guardar lo que selecciona un usuario
+    categories = $state<Category[]>([]) //contiene 
     deleteDialog = $state(false)
     editDialog = $state(false)
-    createDialog = $state(false) 
+    createDialog = $state(false)
 
-   
 
-    async getCategory(){
+
+    async getCategory() {
         this.categories = await http.get(`${import.meta.env.PUBLIC_API_URL}/categories`)
     }
 
-    async createCategory(e: Event){
+    async createCategory(e: Event) {
         e.preventDefault()
         const formData = new FormData(e.target as HTMLFormElement)
         const data = Object.fromEntries(formData)
 
-        await http.post<Category>(`${import.meta.env.PUBLIC_API_URL}/category`, data)
+        console.log(data)
+        await http.post<Category>(`${import.meta.env.PUBLIC_API_URL}/categories`, data)
         this.getCategory()
         this.createDialog = false
 
     }
 
-    async deleteCategory(id: number){
+    async deleteCategory(id: number) {
         if (!this.category) return
-        await http.delete(`${import.meta.env.PUBLIC_API_URL}/category/${id}`)
+        try {
+            await http.delete(`${import.meta.env.PUBLIC_API_URL}/categories/${id}`)
 
-        this.deleteDialog = false
+            await this.getCategory()
+            this.deleteDialog = false
+        } catch (error) {
+            console.log(error)
+            throw error
+        }
     }
 
-    async editCategory(id: number, e: Event){
+    async editCategory(id: number, e: Event) {
         e.preventDefault();
         const formData = new FormData(e.target as HTMLFormElement)
         const data = Object.fromEntries(formData)
 
         if (!this.category) return
-        await http.patch(`${import.meta.env.PUBLIC_API_URL}/category/${id}`, data)
+        await http.patch(`${import.meta.env.PUBLIC_API_URL}/categories/${id}`, data)
 
         this.getCategory();
         this.editDialog = false;
     }
 
-    showCreateModal(){
+    showCreateModal() {
         this.category = null
         this.createDialog = true
     }
 
-    showDeleteModal(category:Category)
-    {
+    showDeleteModal(category: Category) {
         this.category = category
         this.deleteDialog = true
     }
 
-    showEditModal(cateogry:Category){
+    showEditModal(cateogry: Category) {
         this.category = cateogry
         this.editDialog = true
     }
