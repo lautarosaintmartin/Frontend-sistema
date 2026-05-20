@@ -1,52 +1,56 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import Delete from "./delete.svelte";
-    import Edit from "./edit.svelte";
-    import { userModel } from "./user.svelte";
+    import { categoryModel } from "@components/category/category.svelte"
     import Create from "./create.svelte";
+    import Edit from "./edit.svelte";
+    import Delete from "./delete.svelte";
 
-    onMount(async () => {
-        await userModel.getUsers()
+   onMount(async () => {
+        await categoryModel.getCategory() 
     });
+
 </script>
 
-<Delete { userModel } />
-<Edit { userModel } />
-<Create {userModel} />
+<Delete {categoryModel} />
+<Edit { categoryModel }/>
+<Create {categoryModel} />
 
 <div class = "w-full flex justify-end mb-4">
     <button 
         class = "bg-gray-800 text-xl text-white rounded-md px-2 py-1 border border-white"
-        onclick={(e) => userModel.showCreateModal()}
+        onclick={(e) => categoryModel.showCreateModal()}
     >
-        Agregar Usuario
+        Agregar Categoria
     </button>
 </div>
 
 <table class="flex-1 w-full bg-slate-400 dark:bg-gray-900 dark:text-white">
     <thead>
-        <tr class="">
+         <tr class="">
+            <th class="bg-gray-800 text-white text-left px-2">ID</th>
             <th class="bg-gray-800 text-white text-left px-2">Nombre</th>
-            <th class="bg-gray-800 text-white text-left px-2">Gmail</th>
+            <th class="bg-gray-800 text-white text-left px-2">Descripción</th>
             <th class="bg-gray-800 text-white px-2">Acciones</th>
         </tr>
     </thead>
+
     <tbody>
-        {#each userModel.users as user}
-            <tr class="odd:bg-gray-100 dark:odd:bg-gray-700">
-                <td class="px-2 py-1">{user.fullname}</td>
-                <td class="px-2 py-1">{user.email}</td>
+        {#each categoryModel.categories as category}
+             <tr class="odd:bg-gray-100 dark:odd:bg-gray-700">
+                <td class="px-2 py-1">{category.id}</td>
+                <td class="px-2 py-1">{category.name}</td>
+                <td class="px-2 py-1">{category.description}</td>
                 <td>
                     <div class="flex justify-center gap-2">
                         <button
-                            onclick={() => ((userModel.showEditModal(user)))}
+                            onclick={() => ((categoryModel.showEditModal(category)))}
                             aria-label="Editar"
                             class="bg-gray-800 text-white px-3 py-2 rounded-md my-1"
                         >
                             🖋️
                         </button>
                         <button
-                            onclick={() => ((userModel.showDeleteModal(user)))}
+                            onclick={() => ((categoryModel.showDeleteModal(category)))}
                             aria-label="Eliminar"
                             class="bg-red-500 text-white px-3 py-2 rounded-md my-1"
                         >

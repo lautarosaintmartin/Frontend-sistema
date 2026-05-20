@@ -13,5 +13,10 @@ export const ROUTES = [
         path: "/users",
         name: "Usuarios",
         public: false,
+    },
+    {
+        path: "/category",
+        name: "Categorias",
+        public: false,
     }
 ]
