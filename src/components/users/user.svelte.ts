@@ -1,4 +1,5 @@
 import { http } from '@core/http'
+import type { email } from 'astro:schema';
 
 interface User
 {
@@ -14,7 +15,7 @@ class UserModel
     deleteDialog = $state(false)
     editDialog = $state(false)
     createDialog = $state(false)
-    messageError = $state(null)
+    messageError = $state({ fullname: '', email: '', password: '' })
 
     async getUsers()
     {
@@ -49,7 +50,7 @@ class UserModel
             this.getUsers()
             this.createDialog = false
         }catch(error: any){
-            this.messageError = error.message.join(" ")
+            this.messageError = error
         }
     }
 

@@ -11,10 +11,6 @@
             <form onsubmit={(e) => userModel.createUser(e)}>
                 <h2 class="text-lg font-bold">Crear Usuario</h2>
 
-                {#if userModel.messageError}
-                    <p class="text-red-600">{userModel.messageError}</p>
-                {/if}
-                
                 <div class="p-2 flex flex-col">
                     <label for="fullname">Nombre de Usuario:</label>
                     <input
@@ -23,6 +19,11 @@
                         name="fullname"
                         id={`fullname-${id}`}
                     />
+
+                    {#if userModel.messageError?.fullname}
+                        <p class="text-red-600">{userModel.messageError.fullname}</p>
+                    {/if}
+
                 </div>
 
                 <div class="p-2 flex flex-col">
@@ -33,6 +34,11 @@
                         name="email"
                         id={`email-${id}`}
                     />
+
+                    {#if userModel.messageError?.email}
+                        <p class="text-red-600">{userModel.messageError.email}</p>
+                    {/if}
+
                 </div>
 
                   <div class="p-2 flex flex-col">
@@ -43,6 +49,11 @@
                         name="password"
                         id={`password-${id}`}
                     />
+
+                    {#if userModel.messageError?.password}
+                        <p class="text-red-600">{userModel.messageError.password}</p>
+                    {/if}
+
                 </div>
 
                 <div class="p-2 flex justify-end gap-2 mt-3">

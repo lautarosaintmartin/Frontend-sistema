@@ -13,7 +13,7 @@ class CategoryModel {
     deleteDialog = $state(false)
     editDialog = $state(false)
     createDialog = $state(false)
-    messageError = $state(null)
+    messageError = $state({ name: '', description: '' })
 
 
     async getCategory() {
@@ -32,7 +32,8 @@ class CategoryModel {
             this.createDialog = false
 
        }catch(error: any){
-            this.messageError = error.message.join(" ")
+            console.log(error)
+            this.messageError = error
        }
     }
 
