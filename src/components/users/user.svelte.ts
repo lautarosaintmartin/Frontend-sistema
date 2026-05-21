@@ -14,6 +14,7 @@ class UserModel
     deleteDialog = $state(false)
     editDialog = $state(false)
     createDialog = $state(false)
+    messageError = $state(null)
 
     async getUsers()
     {
@@ -39,13 +40,17 @@ class UserModel
     }
 
     async createUser(e: Event){
-        e.preventDefault()
-        const formData = new FormData(e.target as HTMLFormElement)
-        const data = Object.fromEntries(formData)
-        
-        await http.post<User>(`${import.meta.env.PUBLIC_API_URL}/users`, data)
-        this.getUsers()
-        this.createDialog = false
+        try{
+            e.preventDefault()
+            const formData = new FormData(e.target as HTMLFormElement)
+            const data = Object.fromEntries(formData)
+            
+            await http.post<User>(`${import.meta.env.PUBLIC_API_URL}/users`, data)
+            this.getUsers()
+            this.createDialog = false
+        }catch(error: any){
+            this.messageError = error.message.join(" ")
+        }
     }
 
     showCreateModal(){

@@ -11,6 +11,10 @@
             <form onsubmit={(e) => userModel.createUser(e)}>
                 <h2 class="text-lg font-bold">Crear Usuario</h2>
 
+                {#if userModel.messageError}
+                    <p class="text-red-600">{userModel.messageError}</p>
+                {/if}
+                
                 <div class="p-2 flex flex-col">
                     <label for="fullname">Nombre de Usuario:</label>
                     <input

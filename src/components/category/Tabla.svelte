@@ -27,7 +27,6 @@
 <table class="flex-1 w-full bg-slate-400 dark:bg-gray-900 dark:text-white">
     <thead>
          <tr class="">
-            <th class="bg-gray-800 text-white text-left px-2">ID</th>
             <th class="bg-gray-800 text-white text-left px-2">Nombre</th>
             <th class="bg-gray-800 text-white text-left px-2">Descripción</th>
             <th class="bg-gray-800 text-white px-2">Acciones</th>
@@ -37,7 +36,6 @@
     <tbody>
         {#each categoryModel.categories as category}
              <tr class="odd:bg-gray-100 dark:odd:bg-gray-700">
-                <td class="px-2 py-1">{category.id}</td>
                 <td class="px-2 py-1">{category.name}</td>
                 <td class="px-2 py-1">{category.description}</td>
                 <td>

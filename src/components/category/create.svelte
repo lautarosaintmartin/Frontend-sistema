@@ -10,6 +10,10 @@
             <form onsubmit={(e) => categoryModel.createCategory(e)}>
                 <h2 class="text-lg font-bold">Crear Categoria</h2>
 
+                {#if categoryModel.messageError}
+                    <p class="text-red-600">{categoryModel.messageError}</p>
+                {/if}
+
                 <div class="p-2 flex flex-col">
                     <label for="name">Nombre de Categoria:</label>
                     <input

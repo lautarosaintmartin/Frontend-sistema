@@ -13,7 +13,7 @@ class CategoryModel {
     deleteDialog = $state(false)
     editDialog = $state(false)
     createDialog = $state(false)
-
+    messageError = $state(null)
 
 
     async getCategory() {
@@ -21,15 +21,19 @@ class CategoryModel {
     }
 
     async createCategory(e: Event) {
-        e.preventDefault()
-        const formData = new FormData(e.target as HTMLFormElement)
-        const data = Object.fromEntries(formData)
+       try{
+            e.preventDefault()
+            const formData = new FormData(e.target as HTMLFormElement)
+            const data = Object.fromEntries(formData)
 
-        console.log(data)
-        await http.post<Category>(`${import.meta.env.PUBLIC_API_URL}/categories`, data)
-        this.getCategory()
-        this.createDialog = false
+            console.log(data)
+            await http.post<Category>(`${import.meta.env.PUBLIC_API_URL}/categories`, data)
+            this.getCategory()
+            this.createDialog = false
 
+       }catch(error: any){
+            this.messageError = error.message.join(" ")
+       }
     }
 
     async deleteCategory(id: number) {
