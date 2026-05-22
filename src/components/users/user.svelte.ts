@@ -31,13 +31,17 @@ class UserModel
 
     async editUser(id: number, e: Event)
     {
-        e.preventDefault();
-        const formData = new FormData(e.target as HTMLFormElement)
-        const data = Object.fromEntries(formData)
+        try{
+            e.preventDefault();
+            const formData = new FormData(e.target as HTMLFormElement)
+            const data = Object.fromEntries(formData)
 
-        await http.patch(`${import.meta.env.PUBLIC_API_URL}/users/${id}`, data);
-        this.getUsers();
-        this.editDialog = false;
+            await http.patch(`${import.meta.env.PUBLIC_API_URL}/users/${id}`, data);
+            this.getUsers();
+            this.editDialog = false;
+        }catch(error: any){
+            this.messageError = error
+        }
     }
 
     async createUser(e: Event){

@@ -20,6 +20,12 @@
                         id={`fullname-${id}`}
                         value={userModel.user.fullname}
                     />
+
+                    {#if userModel.messageError?.fullname}
+                        <p class="text-red-600">{userModel.messageError.fullname}</p>
+                    {/if}
+
+
                 </div>
 
                 <div class="p-2 flex flex-col">
@@ -31,6 +37,12 @@
                         id={`email-${id}`}
                         value={userModel.user.email}
                     />
+
+                    {#if userModel.messageError?.email}
+                        <p class="text-red-600">{userModel.messageError.email}</p>
+                    {/if}
+
+
                 </div>
 
                 <div class="p-2 flex justify-end gap-2 mt-3">

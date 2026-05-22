@@ -51,15 +51,19 @@ class CategoryModel {
     }
 
     async editCategory(id: number, e: Event) {
-        e.preventDefault();
-        const formData = new FormData(e.target as HTMLFormElement)
-        const data = Object.fromEntries(formData)
+        try{
+            e.preventDefault();
+            const formData = new FormData(e.target as HTMLFormElement)
+            const data = Object.fromEntries(formData)
 
-        if (!this.category) return
-        await http.patch(`${import.meta.env.PUBLIC_API_URL}/categories/${id}`, data)
+            if (!this.category) return
+            await http.patch(`${import.meta.env.PUBLIC_API_URL}/categories/${id}`, data)
 
-        this.getCategory();
-        this.editDialog = false;
+            this.getCategory();
+            this.editDialog = false;
+        }catch(error: any){
+            this.messageError = error
+        }
     }
 
     showCreateModal() {
@@ -76,6 +80,7 @@ class CategoryModel {
     showEditModal(cateogry: Category) {
         this.category = cateogry
         this.editDialog = true
+        this.messageError = { name: '', description: '' }
     }
 }
 

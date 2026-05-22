@@ -1,6 +1,5 @@
 <script lang="ts">
     let { categoryModel } = $props()
-    let id = $props.id();
 </script>
 
 {#if categoryModel.editDialog}
@@ -17,9 +16,14 @@
                         class="border border-gray-400 rounded-md p-2"
                         type="text"
                         name="name"
-                        id={`name-${id}`}
+                        id={`name`}
                         value={categoryModel.category?.name}
                     />
+
+                    {#if categoryModel.messageError?.name}
+                        <p class="text-red-600 text-sm mt-1">{categoryModel.messageError.name}</p>
+                    {/if}
+
                 </div>
 
                 <div class="p-2 flex flex-col">
@@ -31,6 +35,11 @@
                         id= "description"
                         value={categoryModel.category?.description}
                     />
+
+                    {#if categoryModel.messageError?.description}
+                        <p class="text-red-600 text-sm mt-1">{categoryModel.messageError.description}</p>
+                    {/if}
+
                 </div>
 
                 <div class="p-2 flex justify-end gap-2 mt-3">
