@@ -65,6 +65,7 @@ class CategoryModel {
     showCreateModal() {
         this.category = null
         this.createDialog = true
+        this.messageError = { name: '', description: '' }
     }
 
     showDeleteModal(category: Category) {

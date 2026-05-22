@@ -57,6 +57,7 @@ class UserModel
     showCreateModal(){
         this.user = null
         this.createDialog = true
+        this.messageError = { fullname: '', email: '', password: '' }
     }
 
     showEditModal(user:User)

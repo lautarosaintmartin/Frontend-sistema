@@ -50,7 +50,7 @@
                         <button
                             onclick={() => ((categoryModel.showDeleteModal(category)))}
                             aria-label="Eliminar"
-                            class="bg-red-500 text-white px-3 py-2 rounded-md my-1"
+                            class="bg-red-600 text-white px-3 py-2 rounded-md my-1"
                         >
                             🗑
                         </button>

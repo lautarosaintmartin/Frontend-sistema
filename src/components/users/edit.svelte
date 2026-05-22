@@ -12,7 +12,7 @@
                 <h2 class="text-lg font-bold">Editar usuario</h2>
 
                 <div class="p-2 flex flex-col">
-                    <label for="fullname">Nombre de Usuario:</label>
+                    <label for="fullname">Nombre de Usuario</label>
                     <input
                         class="border border-gray-400 rounded-md p-2"
                         type="text"
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="p-2 flex flex-col">
-                    <label for="email">Correo Electronico:</label>
+                    <label for="email">Correo Electronico</label>
                     <input
                         class="border border-gray-400 rounded-md p-2"
                         type="email"
@@ -35,13 +35,13 @@
 
                 <div class="p-2 flex justify-end gap-2 mt-3">
                     <button
-                        class="bg-red-400 text-white px-4 py-2 rounded-md"
+                        class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-800"
                         onclick={() => (userModel.editDialog = false)}
                     >
                         Cancelar
                     </button>
                     <button 
-                        class="bg-blue-400 text-white px-4 py-2 rounded-md"
+                        class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-800"
                         type = "submit"
                     >
                         Guardar

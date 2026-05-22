@@ -27,7 +27,7 @@
     <thead>
         <tr class="">
             <th class="bg-gray-800 text-white text-left px-2">Nombre</th>
-            <th class="bg-gray-800 text-white text-left px-2">Gmail</th>
+            <th class="bg-gray-800 text-white text-left px-2">Email</th>
             <th class="bg-gray-800 text-white px-2">Acciones</th>
         </tr>
     </thead>
@@ -48,7 +48,7 @@
                         <button
                             onclick={() => ((userModel.showDeleteModal(user)))}
                             aria-label="Eliminar"
-                            class="bg-red-500 text-white px-3 py-2 rounded-md my-1"
+                            class="bg-red-600 text-white px-3 py-2 rounded-md my-1"
                         >
                             🗑
                         </button>
