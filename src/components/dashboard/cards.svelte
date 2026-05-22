@@ -1,5 +1,5 @@
 <section class = "flex gap-2">
-    <div class="w-64 block rounded-lg bg-slate-800 shadow-lg dark:bg-white flex-col">
+    <div class="w-64 block rounded-lg bg-slate-800 shadow-lg dark:bg-white flex-col transition hover:scale-95 ">
         <a href="/./users">
             <img class="rounded-t-lg w-auto h-auto" src="https://imgs.search.brave.com/xcOVRrAgskQMng5oELyxGF8wKmX1gl9Rvz3a2jbaV3A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMzAv/MjE2LzYyNS9zbWFs/bC91c2VyLWFjY291/bnQtaGVscC1pY29u/LWRlc2lnbi12ZWN0/b3IuanBn" alt="" />
         </a>
@@ -11,7 +11,7 @@
             </div>
     </div>
 
-    <div class="w-64 block rounded-lg bg-slate-800 shadow-lg dark:bg-white flex-col">
+    <div class="w-64 block rounded-lg bg-slate-800 shadow-lg dark:bg-white flex-col transition hover:scale-95">
         <a href="/./category">
             <img class="rounded-t-lg w-auto h-auto" src="https://imgs.search.brave.com/dN92vYFA4MpnHsF87XRKMFBCVs40zGQHILoNItRAmPc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNjkv/NTIxLzU5My9zbWFs/bC9jYXRlZ29yaWVz/LW1vYmlsZS1pbnRl/cmZhY2UtbWluaW1h/bC1maWxsZWQtY2ly/Y2xlLWljb24tdmVj/dG9yLmpwZw" alt="" />
         </a>
@@ -23,3 +23,12 @@
             </div>
     </div>
 </section>
+
+<style>
+    div {
+        transition: transform 0.2s;
+    }
+    div:hover {
+        transform: scale(0.95);
+    }
+</style>

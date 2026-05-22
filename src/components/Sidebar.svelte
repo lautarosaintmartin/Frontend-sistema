@@ -13,11 +13,11 @@
     </div>
 
     {#each ROUTES.filter(x => !x.public) as route}
-        <a href = {route.path} class="text-black text-shadow-md py-1 px-2 bg-gray-300 rounded-md">{route.name} </a>
+        <a href = {route.path} class="text-black text-shadow-md py-1 px-2 bg-gray-300 rounded-md transition hover:scale-95">{route.name} </a>
     {/each}
 
     <div class = "p-2 flex justify-center">
-        <button onclick={() => appStore.toggleDarkMode()} class = "bg-slate-900 dark:bg-slate-200 text-white px-4 ý-2 rounded-md transition-colors duration-300"> 
+        <button onclick={() => appStore.toggleDarkMode()} class = "bg-slate-900 dark:bg-slate-200 text-white px-4 ý-2 rounded-md transition-colors duration-300 hover:scale-95"> 
             {appStore.isDarkMode ? '☀️' : '🌙'}
         </button>
 
