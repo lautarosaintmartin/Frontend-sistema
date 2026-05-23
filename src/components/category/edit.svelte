@@ -11,7 +11,7 @@
                 <h2 class="text-lg font-bold">Editar Categoria</h2>
 
                 <div class="p-2 flex flex-col">
-                    <label for="name">Nombre de Categoria:</label>
+                    <label for="name">Nombre de Categoria</label>
                     <input
                         class="border border-gray-400 rounded-md p-2"
                         type="text"
@@ -23,11 +23,11 @@
                     {#if categoryModel.messageError?.name}
                         <p class="text-red-600 text-sm mt-1">{categoryModel.messageError.name}</p>
                     {/if}
-
+                    
                 </div>
 
                 <div class="p-2 flex flex-col">
-                    <label for="email">Descripción:</label>
+                    <label for="email">Descripción</label>
                     <input
                         class="border border-gray-400 rounded-md p-2"
                         type="text"

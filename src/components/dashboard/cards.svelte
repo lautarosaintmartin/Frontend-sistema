@@ -1,34 +1,79 @@
-<section class = "flex gap-2">
-    <div class="w-64 block rounded-lg bg-slate-800 shadow-lg dark:bg-white flex-col transition hover:scale-95 ">
+<section class="flex gap-2">
+    <div
+        class="w-64 block rounded-lg bg-slate-800 shadow-lg dark:bg-white flex-col transition hover:scale-95"
+    >
         <a href="/./users">
-            <img class="rounded-t-lg w-auto h-auto" src="https://imgs.search.brave.com/xcOVRrAgskQMng5oELyxGF8wKmX1gl9Rvz3a2jbaV3A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMzAv/MjE2LzYyNS9zbWFs/bC91c2VyLWFjY291/bnQtaGVscC1pY29u/LWRlc2lnbi12ZWN0/b3IuanBn" alt="" />
+            <img
+                class="rounded-t-lg w-auto h-auto"
+                src="https://imgs.search.brave.com/m64gXfV3cVgmf6C-W6R1_UHiPpzl6CoOM73ILQR8ris/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi91c2Vy/LXByb2ZpbGUtaWNv/bi1mbGF0LXZlY3Rv/ci1pbGx1c3RyYXRp/b24tZGVzaWduLXVz/ZXItcHJvZmlsZS1p/Y29uLWZsYXQtdmVj/dG9yLWlsbHVzdHJh/dGlvbi1kZXNpZ24t/aXNvbGF0ZWQtd2hp/dGUtYmFja2dyb3Vu/ZC0xNTg0MTY2Mzcu/anBn"
+                alt=""
+            />
         </a>
-            <div class="p-6 rounded-md bg-slate-800 dark:bg-white text-white dark:text-black">
-                <h5 class="mb-2 text-xl font-medium leading-tight">Usuarios</h5>
-                    <a href="/users" class="inline-block rounded bg-blue-600 px-6 py-2 text-xs font-medium uppercase text-white hover:bg-blue-700">
-                        Usuarios
-                    </a>
-            </div>
+        <div
+            class="p-6 rounded-md bg-slate-800 dark:bg-white text-white dark:text-black"
+        >
+            <h5 class="mb-2 text-xl font-medium leading-tight">Usuarios</h5>
+            <a
+                href="/users"
+                class="inline-block rounded bg-blue-600 px-6 py-2 text-xs font-medium uppercase text-white hover:bg-blue-700"
+            >
+                Seleccionar
+            </a>
+        </div>
     </div>
 
-    <div class="w-64 block rounded-lg bg-slate-800 shadow-lg dark:bg-white flex-col transition hover:scale-95">
+    <div
+        class="w-64 block rounded-lg bg-slate-800 shadow-lg dark:bg-white flex-col transition hover:scale-95"
+    >
         <a href="/./category">
-            <img class="rounded-t-lg w-auto h-auto" src="https://imgs.search.brave.com/dN92vYFA4MpnHsF87XRKMFBCVs40zGQHILoNItRAmPc/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNjkv/NTIxLzU5My9zbWFs/bC9jYXRlZ29yaWVz/LW1vYmlsZS1pbnRl/cmZhY2UtbWluaW1h/bC1maWxsZWQtY2ly/Y2xlLWljb24tdmVj/dG9yLmpwZw" alt="" />
+            <img
+                class="rounded-t-lg w-auto h-auto"
+                src="https://imgs.search.brave.com/L8lHfEYDnT_-mqbkZXGQctJ6gV4CgCAUJ2F2I6hnB44/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/aWNvbnM4LmNvbS9l/eHRlcm5hbC10YWwt/cmV2aXZvLWNvbG9y/LXRhbC1yZXZpdm8v/MTIwMC9leHRlcm5h/bC1tZW51LWFwcHMt/c3F1YXJlLXBhcnRz/LWluLWlzb2xhdGVk/LW9uLXdoaXRlLWJh/Y2tncm91bmQtYXBw/cy1jb2xvci10YWwt/cmV2aXZvLmpwZw"
+                alt=""
+            />
         </a>
-            <div class="p-6 rounded-md bg-slate-800 dark:bg-white text-white dark:text-black">
-                <h5 class="mb-2 text-xl font-medium leading-tight">Categorias</h5>
-                    <a href="/category" class="inline-block rounded bg-blue-600 px-6 py-2 text-xs font-medium uppercase text-white hover:bg-blue-700">
-                        Categorias
-                    </a>
-            </div>
+        <div
+            class="p-6 rounded-md bg-slate-800 dark:bg-white text-white dark:text-black"
+        >
+            <h5 class="mb-2 text-xl font-medium leading-tight">Categorias</h5>
+            <a
+                href="/category"
+                class="inline-block rounded bg-blue-600 px-6 py-2 text-xs font-medium uppercase text-white hover:bg-blue-700"
+            >
+                Seleccionar
+            </a>
+        </div>
+    </div>
+
+    <div
+        class="w-64 block rounded-lg bg-slate-800 shadow-lg dark:bg-white flex-col transition hover:scale-95"
+    >
+        <a href="/./product">
+            <img
+                class="rounded-t-lg w-auto h-auto"
+                src="https://imgs.search.brave.com/f2fXHFEVpxFWqhmImsmhSEFR-99oLq2q33g2P6XNaB8/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9lbXB0/eS1zaG9wcGluZy1i/YWctb3V0bGluZS1m/bGF0LWljb24taXNv/bGF0ZWQtd2hpdGUt/YmFja2dyb3VuZC1l/cHMtZmlsZS1hdmFp/bGFibGUtZW1wdHkt/c2hvcHBpbmctYmFn/LW91dGxpbmUtZmxh/dC1pY29uLTEyMzU1/MjE0Mi5qcGc"
+                alt=""
+            />
+        </a>
+        <div
+            class="p-6 rounded-md bg-slate-800 dark:bg-white text-white dark:text-black"
+        >
+            <h5 class="mb-2 text-xl font-medium leading-tight">Productos</h5>
+            <a
+                href="/product"
+                class="inline-block rounded bg-blue-600 px-6 py-2 text-xs font-medium uppercase text-white hover:bg-blue-700"
+            >
+                Seleccionar
+            </a>
+        </div>
     </div>
 </section>
 
-<style>
+<!-- <style>
     div {
         transition: transform 0.2s;
     }
     div:hover {
         transform: scale(0.95);
     }
-</style>
+</style> -->

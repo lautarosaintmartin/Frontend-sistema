@@ -18,5 +18,10 @@ export const ROUTES = [
         path: "/category",
         name: "Categorias",
         public: false,
+    },
+    {
+        path: "/product",
+        name: "Productos",
+        public: false,
     }
 ]
