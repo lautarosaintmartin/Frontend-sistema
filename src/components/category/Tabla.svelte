@@ -28,8 +28,7 @@
     <thead>
          <tr class="">
             <th class="bg-gray-800 text-white text-left px-2">Nombre</th>
-            <th class="bg-gray-800 text-white text-left px-2">Descripción</th>
-            <th class="bg-gray-800 text-white px-2">Acciones</th>
+            <th class="bg-gray-800 text-white px-2 flex justify-end">Acciones</th>
         </tr>
     </thead>
 
@@ -37,9 +36,8 @@
         {#each categoryModel.categories as category}
              <tr class="odd:bg-gray-100 dark:odd:bg-gray-700">
                 <td class="px-2 py-1">{category.name}</td>
-                <td class="px-2 py-1">{category.description}</td>
                 <td>
-                    <div class="flex justify-center gap-2">
+                    <div class="flex justify-end gap-2">
                         <button
                             onclick={() => ((categoryModel.showEditModal(category)))}
                             aria-label="Editar"

@@ -26,22 +26,6 @@
                     
                 </div>
 
-                <div class="p-2 flex flex-col">
-                    <label for="email">Descripción</label>
-                    <input
-                        class="border border-gray-400 rounded-md p-2"
-                        type="text"
-                        name="description"
-                        id= "description"
-                        value={categoryModel.category?.description}
-                    />
-
-                    {#if categoryModel.messageError?.description}
-                        <p class="text-red-600 text-sm mt-1">{categoryModel.messageError.description}</p>
-                    {/if}
-
-                </div>
-
                 <div class="p-2 flex justify-end gap-2 mt-3">
                     <button
                         class="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-800"

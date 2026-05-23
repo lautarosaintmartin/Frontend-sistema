@@ -3,7 +3,6 @@ import { http } from '@core/http'
 export interface Category {
     id: number
     name: string
-    description: string
 }
 
 class CategoryModel {
@@ -13,7 +12,7 @@ class CategoryModel {
     deleteDialog = $state(false)
     editDialog = $state(false)
     createDialog = $state(false)
-    messageError = $state({ name: '', description: '' })
+    messageError = $state({ name: '' })
 
 
     async getCategory() {
@@ -69,7 +68,7 @@ class CategoryModel {
     showCreateModal() {
         this.category = null
         this.createDialog = true
-        this.messageError = { name: '', description: '' }
+        this.messageError = { name: '' }
     }
 
     showDeleteModal(category: Category) {
@@ -80,7 +79,7 @@ class CategoryModel {
     showEditModal(cateogry: Category) {
         this.category = cateogry
         this.editDialog = true
-        this.messageError = { name: '', description: '' }
+        this.messageError = { name: '' }
     }
 }
 
