@@ -64,14 +64,14 @@
                         name="id_categoria" 
                         id="id_categoria"
                         >
-                        <option value= "">Seleccionar Categoria</option>
-                            {#each  categoryModel.categories as category}
-                                <option 
-                                value= {category.id}
-                                >
-                                    {category.name}
-                                </option>
-                            {/each}
+                        <option value="">Seleccionar Categoria</option>
+                        {#each  categoryModel.categories as category}
+                            <option 
+                            value= {category.id}
+                            >
+                                {category.name}
+                            </option>
+                        {/each}
                     </select>
 
                     {#if productModel.messageError?.id_categoria}

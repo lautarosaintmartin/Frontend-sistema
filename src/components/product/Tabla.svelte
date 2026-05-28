@@ -41,7 +41,7 @@
                 <td class="px-2 py-1">{product.name}</td>
                 <td class="px-2 py-1">{product.stock}</td>
                 <td class="px-2 py-1">{product.categoria?.name}</td>
-                <td class="px-2 py-1">{product.precioUnitario}</td>
+                <td class="px-2 py-1">{productModel.formatPrice(product.precioUnitario)}</td>
                 <td>
                     <div class="flex justify-center gap-2">
                         <button

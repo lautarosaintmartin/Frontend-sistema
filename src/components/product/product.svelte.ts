@@ -6,7 +6,6 @@ interface Product {
     name: string
     stock: number
     precioUnitario: number
-    id_categoria: number
     categoria: Category
 }
 
@@ -22,7 +21,6 @@ class ProductModel {
 
     async getProduct() {
         this.products = await http.get(`${import.meta.env.PUBLIC_API_URL}/products`)
-        console.log(this.products)
     }
 
     async createProduct(e: Event) {
@@ -31,7 +29,6 @@ class ProductModel {
             const formData = new FormData(e.target as HTMLFormElement)
             const data = Object.fromEntries(formData)
 
-            console.log(data)
             await http.post<Product>(`${import.meta.env.PUBLIC_API_URL}/products`, data)
             this.getProduct()
             this.createDialog = false
@@ -39,7 +36,7 @@ class ProductModel {
         } catch (error: any) {
             console.log(error)
             this.messageError = error
-            
+
         }
     }
 
@@ -58,11 +55,10 @@ class ProductModel {
 
     async editProduct(id: number, e: Event) {
         try {
-            e.preventDefault();
+            e.preventDefault()
             const formData = new FormData(e.target as HTMLFormElement)
             const data = Object.fromEntries(formData)
 
-            if (!this.product) return
             await http.patch(`${import.meta.env.PUBLIC_API_URL}/products/${id}`, data)
 
             this.getProduct();
@@ -70,6 +66,13 @@ class ProductModel {
         } catch (error: any) {
             this.messageError = error
         }
+    }
+
+    formatPrice(price: number): string {
+        return new Intl.NumberFormat("es-AR", {
+            style: "currency",
+            currency: "ARS"
+        } as const).format(price)
     }
 
     showCreateModal() {

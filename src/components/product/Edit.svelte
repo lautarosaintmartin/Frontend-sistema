@@ -71,6 +71,7 @@
                        <select 
                         name="id_categoria" 
                         id="id_categoria"
+                        value={productModel?.product?.categoria?.id}
                         >
                             {#each  categoryModel.categories as category}
                                 <option 
