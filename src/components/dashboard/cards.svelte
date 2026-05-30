@@ -28,7 +28,7 @@
         <a href="/./category">
             <img
                 class="rounded-t-lg w-auto h-auto"
-                src="https://imgs.search.brave.com/L8lHfEYDnT_-mqbkZXGQctJ6gV4CgCAUJ2F2I6hnB44/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/aWNvbnM4LmNvbS9l/eHRlcm5hbC10YWwt/cmV2aXZvLWNvbG9y/LXRhbC1yZXZpdm8v/MTIwMC9leHRlcm5h/bC1tZW51LWFwcHMt/c3F1YXJlLXBhcnRz/LWluLWlzb2xhdGVk/LW9uLXdoaXRlLWJh/Y2tncm91bmQtYXBw/cy1jb2xvci10YWwt/cmV2aXZvLmpwZw"
+                src="https://imgs.search.brave.com/GJdfVVw_Fvw9Lzzq_1w-g2Bca6fdmshftkw30Otcbok/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNDUv/NzEwLzkzNC9zbWFs/bC9waXhlbC1kZXNp/Z24tdG9vbHMtdGVj/aG5vbG9neS1pbGx1/c3RyYXRpb24tdmVj/dG9yLmpwZw"
                 alt=""
             />
         </a>
@@ -84,6 +84,29 @@
             <h5 class="mb-2 text-xl font-medium leading-tight">Productos</h5>
             <a
                 href="/product"
+                class="inline-block rounded bg-blue-600 px-6 py-2 text-xs font-medium uppercase text-white hover:bg-blue-700"
+            >
+                Seleccionar
+            </a>
+        </div>
+    </div>
+
+    <div
+        class="w-64 block rounded-lg bg-slate-800 shadow-lg dark:bg-white flex-col transition hover:scale-95"
+    >
+        <a href="/./movement">
+            <img
+                class="rounded-t-lg w-auto h-auto"
+                src="https://imgs.search.brave.com/9qm8hzU_ISabKFL1YLDkeTl8q9K8_GG1uid2dPFpTUo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi90aHJl/ZS1jaXJjdWxhci1h/cnJvd3MtdmVjdG9y/LWljb24tdGhyZWUt/Y2lyY3VsYXItYXJy/b3dzLXZlY3Rvci1p/Y29uLWZpbGxlZC1m/bGF0LXNpZ24tbW9i/aWxlLWNvbmNlcHQt/d2ViLWRlc2lnbi1z/eW5jaHJvbml6ZS0x/NDIxMTY2MzYuanBn"
+                alt=""
+            />
+        </a>
+        <div
+            class="p-6 rounded-md bg-slate-800 dark:bg-white text-white dark:text-black"
+        >
+            <h5 class="mb-2 text-xl font-medium leading-tight">Movimientos</h5>
+            <a
+                href="/movement"
                 class="inline-block rounded bg-blue-600 px-6 py-2 text-xs font-medium uppercase text-white hover:bg-blue-700"
             >
                 Seleccionar
