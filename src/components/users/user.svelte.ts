@@ -1,5 +1,4 @@
 import { http } from '@core/http'
-import type { email } from 'astro:schema';
 
 interface User
 {

@@ -48,6 +48,29 @@
     <div
         class="w-64 block rounded-lg bg-slate-800 shadow-lg dark:bg-white flex-col transition hover:scale-95"
     >
+        <a href="/./provider">
+            <img
+                class="rounded-t-lg w-auto h-auto"
+                src="https://imgs.search.brave.com/yscSQos6u_8pzxLaG8mdKYB1-L-tUA4DiBJpfv3tIAU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMx/NDU2NTAyMC92ZWN0/b3IvZnJlZS1zaGlw/cGluZy1kZWxpdmVy/eS10cnVjay1mbGF0/LWljb24uanBnP3M9/NjEyeDYxMiZ3PTAm/az0yMCZjPTM1OGxL/MEZ2c29DOGc2SGNB/STl3VWl1NzRCam90/NUlab3dFNWpVTHJl/UnM9"
+                alt=""
+            />
+        </a>
+        <div
+            class="p-6 rounded-md bg-slate-800 dark:bg-white text-white dark:text-black"
+        >
+            <h5 class="mb-2 text-xl font-medium leading-tight">Proveedores</h5>
+            <a
+                href="/provider"
+                class="inline-block rounded bg-blue-600 px-6 py-2 text-xs font-medium uppercase text-white hover:bg-blue-700"
+            >
+                Seleccionar
+            </a>
+        </div>
+    </div>
+
+    <div
+        class="w-64 block rounded-lg bg-slate-800 shadow-lg dark:bg-white flex-col transition hover:scale-95"
+    >
         <a href="/./product">
             <img
                 class="rounded-t-lg w-auto h-auto"

@@ -20,7 +20,7 @@
         class = "bg-gray-800 text-xl text-white rounded-md px-2 py-1 border border-white"
         onclick={(e) => categoryModel.showCreateModal()}
     >
-        Agregar Categoria
+        ➕
     </button>
 </div>
 

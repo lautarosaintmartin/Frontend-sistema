@@ -1,23 +1,23 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import Delete from "./delete.svelte";
-    import Edit from "./edit.svelte";
-    import { userModel } from "./user.svelte";
-    import Create from "./create.svelte";
+    import Delete from "@components/provider/Delete.svelte";
+    import Edit from "@components/provider/Edit.svelte";
+    import { providerModel } from "@components/provider/provider.svelte";
+    import Create from "@components/provider/Create.svelte";
 
     onMount(async () => {
-        await userModel.getUsers()
+        await providerModel.getProvider()
     });
 </script>
 
-<Delete { userModel } />
-<Edit { userModel } />
-<Create {userModel} />
+<Delete { providerModel } />
+<Edit { providerModel } />
+<Create {providerModel} />
 
 <div class = "w-full flex justify-end mb-4">
     <button 
         class = "bg-gray-800 text-xl text-white rounded-md px-2 py-1 border border-white"
-        onclick={(e) => userModel.showCreateModal()}
+        onclick={(e) => providerModel.showCreateModal()}
     >
         ➕
     </button>
@@ -28,25 +28,27 @@
         <tr class="">
             <th class="bg-gray-800 text-white text-left px-2">Nombre</th>
             <th class="bg-gray-800 text-white text-left px-2">Email</th>
+            <th class="bg-gray-800 text-white text-left px-2">Numero Telefonico</th>
             <th class="bg-gray-800 text-white px-2">Acciones</th>
         </tr>
     </thead>
     <tbody>
-        {#each userModel.users as user}
+        {#each providerModel.providers as provider}
             <tr class="odd:bg-gray-100 dark:odd:bg-gray-700">
-                <td class="px-2 py-1">{user.fullname}</td>
-                <td class="px-2 py-1">{user.email}</td>
+                <td class="px-2 py-1">{provider.name}</td>
+                <td class="px-2 py-1">{provider.email}</td>
+                <td class="px-2 py-1">{provider.phone}</td>
                 <td>
                     <div class="flex justify-center gap-2">
                         <button
-                            onclick={() => ((userModel.showEditModal(user)))}
+                            onclick={() => ((providerModel.showEditModal(provider)))}
                             aria-label="Editar"
                             class="bg-gray-800 text-white px-3 py-2 rounded-md my-1"
                         >
                             🖋️
                         </button>
                         <button
-                            onclick={() => ((userModel.showDeleteModal(user)))}
+                            onclick={() => ((providerModel.showDeleteModal(provider)))}
                             aria-label="Eliminar"
                             class="bg-red-600 text-white px-3 py-2 rounded-md my-1"
                         >
