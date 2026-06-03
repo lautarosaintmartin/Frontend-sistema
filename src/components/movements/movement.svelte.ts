@@ -12,8 +12,8 @@ interface Movement
     date: Date
     amount: number
     priceUnit: number
-    user: { id: number, fullname: string }
     product: { id: number, name: string }
+    user: { id: number, fullname: string }
 }
 
 class MovementModel

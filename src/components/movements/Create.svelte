@@ -16,10 +16,11 @@
     <div
         class="w-full h-full text-black fixed top-0 left-0 flex flex-col items-center bg-transparent justify-center backdrop-blur-xl"
     >
-        <div class="w-96 bg-white p-4 rounded-md">
+        <div class="bg-white p-4 rounded-md w-auto">
             <form onsubmit={(e) => movementModel.createMovements(e)}>
                 <h2 class="text-lg font-bold">Crear Movimiento</h2>
 
+                <div class = "grid grid-cols-2 gap-4">
                 <div class="p-2 flex flex-col">
                     <label for="type">Tipo de Movimiento</label>
                     <select
@@ -108,6 +109,7 @@
                         {/each}
                     </select>
                 </div>
+            </div>
 
                 <div class="p-2 flex justify-end gap-2 mt-3">
                     <button
