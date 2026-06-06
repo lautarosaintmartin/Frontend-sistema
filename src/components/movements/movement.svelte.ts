@@ -1,6 +1,6 @@
 import { http } from '@core/http'
 
-enum MovementType {
+export enum MovementType {
     IN = 'IN',
     OUT = 'OUT'
 }
@@ -9,7 +9,7 @@ interface Movement
 {
     id: number
     type: MovementType
-    date: Date
+    date: string
     amount: number
     priceUnit: number
     product: { id: number, name: string }
@@ -81,11 +81,30 @@ class MovementModel
     {
         this.movement = movement
         this.editDialog = true
+        this.messageError = { type: '', date: '', amount: '', priceUnit: '' }
     }
 
     showDeleteModal(movement: Movement){
         this.movement = movement;
         this.deleteDialog = true;
+    }
+
+    formatDate(date:string){
+        const dateObj = new Date(date)
+        return new Intl.DateTimeFormat('es-AR', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        }).format(dateObj)
+    }
+
+    formatDateInput(date: string){
+        const dateObj = new Date(date)
+        return new Intl.DateTimeFormat('en-CA', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit'
+        }).format(dateObj)
     }
 }
 

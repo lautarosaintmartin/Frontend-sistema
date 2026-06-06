@@ -2,12 +2,13 @@
     import { productModel } from "@components/product/product.svelte";
     import { userModel } from "@components/users/user.svelte";
     import { onMount } from "svelte";
+    import { MovementType } from "./movement.svelte";
 
     let { movementModel } = $props();
 
     onMount(async () => {
-        await productModel.getProduct()
-        await userModel.getUsers()
+        await productModel.getProduct();
+        await userModel.getUsers();
     });
 </script>
 
@@ -16,7 +17,10 @@
         class="w-full h-full text-black fixed top-0 left-0 flex flex-col items-center bg-transparent justify-center backdrop-blur-xl"
     >
         <div class="w-96 bg-white p-4 rounded-md">
-            <form onsubmit={(e) => movementModel.editMovement(movementModel.movement!.id, e)}>
+            <form
+                onsubmit={(e) =>
+                    movementModel.editMovement(movementModel.movement!.id, e)}
+            >
                 <h2 class="text-lg font-bold">Editar Movimiento</h2>
 
                 <div class="p-2 flex flex-col">
@@ -26,12 +30,15 @@
                         name="type"
                         value={movementModel.movement?.type}
                     >
-                        <option value="IN">Entrada</option>
-                        <option value="OUT">Salida</option>
+                        {#each Object.entries(MovementType) as [key, value]}
+                            <option value={key}>{value}</option>
+                        {/each}
                     </select>
 
                     {#if movementModel.messageError?.type}
-                        <p class="text-red-600 text-sm mt-1">{movementModel.messageError.type}</p>
+                        <p class="text-red-600 text-sm mt-1">
+                            {movementModel.messageError.type}
+                        </p>
                     {/if}
                 </div>
 
@@ -41,11 +48,15 @@
                         class="border border-gray-400 rounded-md p-2"
                         type="date"
                         name="date"
-                        value={movementModel.movement?.date ? new Date(movementModel.movement.date).toISOString().split('T')[0] : ''}
+                        value={movementModel.formatDateInput(
+                            movementModel.movement?.date,
+                        )}
                     />
 
                     {#if movementModel.messageError?.date}
-                        <p class="text-red-600 text-sm mt-1">{movementModel.messageError.date}</p>
+                        <p class="text-red-600 text-sm mt-1">
+                            {movementModel.messageError.date}
+                        </p>
                     {/if}
                 </div>
 
@@ -60,7 +71,9 @@
                     />
 
                     {#if movementModel.messageError?.amount}
-                        <p class="text-red-600 text-sm mt-1">{movementModel.messageError.amount}</p>
+                        <p class="text-red-600 text-sm mt-1">
+                            {movementModel.messageError.amount}
+                        </p>
                     {/if}
                 </div>
 
@@ -76,7 +89,9 @@
                     />
 
                     {#if movementModel.messageError?.priceUnit}
-                        <p class="text-red-600 text-sm mt-1">{movementModel.messageError.priceUnit}</p>
+                        <p class="text-red-600 text-sm mt-1">
+                            {movementModel.messageError.priceUnit}
+                        </p>
                     {/if}
                 </div>
 

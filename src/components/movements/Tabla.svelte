@@ -41,7 +41,7 @@
             <tr class="odd:bg-gray-100 dark:odd:bg-gray-700">
                 <td class="px-2 py-1">#{movement.id}</td>
                 <td class="px-2 py-1">{movement.type}</td>
-                <td class="px-2 py-1">{new Date(movement.date).toLocaleDateString('es-AR')}</td>
+                <td class="px-2 py-1">{movementModel.formatDate(movement.date)}</td>
                 <td class="px-2 py-1">{movement.amount}</td>
                 <td class="px-2 py-1">{movement.priceUnit}</td>
                 <td class="px-2 py-1">{movement.product?.name ?? 'Producto eliminado'}</td>
