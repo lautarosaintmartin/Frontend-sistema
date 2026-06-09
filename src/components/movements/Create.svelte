@@ -1,17 +1,12 @@
 <script lang="ts">
     import { productModel } from "../product/product.svelte";
     import { userModel } from "../users/user.svelte";
-    import { onMount } from "svelte";
     import { MovementType } from "./movement.svelte";
 
     let { movementModel } = $props();
     let id = $props.id();
     let now = new Date();
 
-    onMount(async () => {
-        await productModel.getProduct();
-        await userModel.getUsers();
-    });
 </script>
 
 {#if movementModel.createDialog}

@@ -4,9 +4,13 @@
     import Edit from "@components/movements/Edit.svelte";
     import { movementModel } from "./movement.svelte";
     import Create from "@components/movements/Create.svelte";
+    import { userModel } from "@components/users/user.svelte";
+    import { categoryModel } from "@components/category/category.svelte";
 
     onMount(async () => {
         await movementModel.getMovements()
+        await userModel.getUsers()
+        await categoryModel.getCategory()
     });
 </script>
 
